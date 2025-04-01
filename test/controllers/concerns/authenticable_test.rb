@@ -17,3 +17,13 @@ class AuthenticableTest < ActionDispatch::IntegrationTest
     assert_nil @authentication.current_user
   end
 end 
+
+
+class MockController
+  include Authenticable
+  attr_accessor :request
+
+  def initialize
+    @request = ActionDispatch::TestRequest.create
+  end
+end

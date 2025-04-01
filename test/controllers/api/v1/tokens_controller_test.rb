@@ -6,7 +6,7 @@ class Api::V1::TokensControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get JWT token' do
-    post api_v1_token_url, params: {
+    post api_v1_tokens_url, params: {
       user: {
         email: @user.email,
         password: 'g00d_pa$$'
